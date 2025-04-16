@@ -32,7 +32,6 @@
     ]
   },
   "devDependencies": {
-    "eslint-config-react-app": "^4.0.1",
     "tailwindcss": "^3.4.17"
   }
 }
