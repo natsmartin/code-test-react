@@ -53,7 +53,7 @@ function App() {
         observer.unobserve(refCurrent);
       }
     };
-  }, [fetchLaunches]);
+  }, [error, filteredLaunches, fetchLaunches]);
 
   return (
     <div>
