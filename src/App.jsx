@@ -42,13 +42,15 @@ function App() {
       }
     });
 
-    if (loaderRef.current) {
-      observer.observe(loaderRef.current);
+    const refCurrent = loaderRef.current
+
+    if (refCurrent) {
+      observer.observe(refCurrent);
     }
 
     return () => {
-      if (loaderRef.current) {
-        observer.unobserve(loaderRef.current);
+      if (refCurrent) {
+        observer.unobserve(refCurrent);
       }
     };
   }, [fetchLaunches]);
