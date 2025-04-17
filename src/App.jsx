@@ -25,12 +25,14 @@ function App() {
     if (response.length === 0) {
       setError("Error fetching data from server!");
     } else {
+      setError("");
       setFilteredLaunches((prevItems) => [...prevItems, ...response]);
       setIndex((prevIndex) => prevIndex + 1);
     }
 
     setIsLoading(false);
   }, [index, isLoading]);
+
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -53,7 +55,7 @@ function App() {
         observer.unobserve(refCurrent);
       }
     };
-  }, [error, filteredLaunches, fetchLaunches]);
+  }, [error, fetchLaunches, filteredLaunches]);
 
   return (
     <div>
